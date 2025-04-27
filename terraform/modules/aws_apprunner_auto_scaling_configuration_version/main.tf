@@ -1,5 +1,5 @@
 
-resource "aws_appruner_auto_scaling_configuration_version" "this" {
+resource "aws_apprunner_auto_scaling_configuration_version" "this" {
   auto_scaling_configuration_name = var.name
 
   // The maximum number of concurrent requests that an instance processes. 
