@@ -21,7 +21,7 @@ resource "aws_apprunner_service" "this" {
   }
 
   health_check_configuration {
-    path = var.health_check_path
+    path     = var.health_check_path
     protocol = var.health_check_protocol
   }
 }

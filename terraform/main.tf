@@ -54,7 +54,7 @@ module "aws_apprunner_service" {
   health_check_path              = "/health"
   health_check_protocol          = "HTTP"
   access_role_arn                = module.aws_iam_role.arn
-  depends_on = [module.aws_iam_role_policy_attachment]
+  depends_on                     = [module.aws_iam_role_policy_attachment]
 }
 
 module "aws_apprunner_auto_scaling_configuration" {
@@ -70,7 +70,7 @@ module "aws_iam_role" {
 }
 
 module "aws_iam_role_policy_attachment" {
-  source = "./modules/aws_iam_role_policy_attachment"
+  source     = "./modules/aws_iam_role_policy_attachment"
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSAppRunnerServicePolicyForECRAccess"
-  role_name = module.aws_iam_role.name
+  role_name  = module.aws_iam_role.name
 }
